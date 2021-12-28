@@ -1,4 +1,4 @@
-const http = require('http');
+/*const http = require('http');
 const express = require('express');
 //var cors = require('cors');
 const booksRouter = require('./routes/books');
@@ -25,3 +25,22 @@ console.log("Listening on Port 3000");
 
 server.listen(port);
 console.debug('Server port ' + port);
+*/
+
+//server.js
+const express = require('express')
+const path = require('path')
+
+const app = express()
+const booksRouter = require('./routes/books');
+app.use('/books', booksRouter);
+//app.use(express.static(path.resolve(__dirname, 'public')));
+// and all the other stuff
+module.exports = app
+
+//app.js
+//const app = require('./server');
+const port = process.env.PORT || 3000;
+app.listen(port, '0.0.0.0', () => {
+    console.log('Server is running s on port: ' + port)
+});
