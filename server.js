@@ -28,10 +28,12 @@ console.debug('Server port ' + port);
 */
 
 //server.js
+const http = require('http');
 const express = require('express')
 //const path = require('path')
 
 const app = express()
+app.use(express.json());
 const booksRouter = require('./routes/books');
 app.use('/books', booksRouter);
 //app.use(express.static(path.resolve(__dirname, 'public')));
