@@ -6,7 +6,7 @@ let data = [];
 router.get('/', function (req, res) {
 
 data.sort(sortByProperty("title"));
-    res.status(200).json(data);
+    res.status(200).json({ books: data});
 });
 
 
