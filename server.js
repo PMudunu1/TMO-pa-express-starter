@@ -1,6 +1,6 @@
-const http = require('https');
+const http = require('http');
 const express = require('express');
-var cors = require('cors');
+//var cors = require('cors');
 const booksRouter = require('./routes/books');
 
 
@@ -17,7 +17,11 @@ app.use('/', function(req, res) {
 
 const server = http.createServer(app);
 //const port = 80;
-const port = Process.env.PORT || 3000 ;
-.listen(process.env.PORT || 5000)
-//server.listen(port);
+
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port 3000");
+});
+
+server.listen(port);
 console.debug('Server port ' + port);
