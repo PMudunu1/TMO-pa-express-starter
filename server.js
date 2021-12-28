@@ -16,6 +16,6 @@ app.use('/', function(req, res) {
 });
 
 const server = http.createServer(app);
-const port = 80;
-server.listen(port);
+//const port = 80;
+server.listen();
 console.debug('Server port ' + port);
