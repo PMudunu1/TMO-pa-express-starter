@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 let data = [];
 
-router.get('/api/books', function (req, res) {
+router.get('/', function (req, res) {
 
 data.sort(sortByProperty("title"));
     res.status(200).json(data);
 });
 
 
-router.post('/api/books', function (req, res) {
+router.post('/', function (req, res) {
     let bookIds= data.map(book => book.id);
     let newId = bookIds.length > 0 ? Math.max.apply(Math, bookIds) + 1 : 1;
    
@@ -29,7 +29,7 @@ router.post('/api/books', function (req, res) {
 
 
 
-router.delete('/api/books', function (req, res) {
+router.delete('/', function (req, res) {
         data.length = 0;
 res.sendStatus(204); 
 });
