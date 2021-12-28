@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-let data = {"books":[]};
+let data = [];
 
 router.get('/', function (req, res) {
 
